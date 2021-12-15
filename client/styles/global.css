@@ -10,6 +10,7 @@
     background-color: var(--bg-color);
 
 }
+
 body{
     background: rgb(255,74,74);
 background: -moz-linear-gradient(90deg, rgba(255,74,74,1) 28%, rgba(255,107,150,1) 100%);
@@ -17,12 +18,18 @@ background: -webkit-linear-gradient(90deg, rgba(255,74,74,1) 28%, rgba(255,107,1
 background: linear-gradient(90deg, rgba(255,74,74,1) 28%, rgba(255,107,150,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4a4a",endColorstr="#ff6b96",GradientType=1);
 }
+
+
+
 h1{
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
 }
+
 label{
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     font-size: 18px;
 }
+
+
