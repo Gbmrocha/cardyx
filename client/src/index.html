@@ -11,16 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/home.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+    <div id="modal" class="modal">
+        <div class="container-cards">
+
+            <div class="header-modal">
+                <a href="#"><img src="../assets/close.svg"></a>
+
+                <h1 class="modal-title">Modelos</h1>
+            </div>
+        
+                
+            
+                
+        </div>
+    </div>
+
     <div class="container">
+
 
 
         <div class="nav-bar">
@@ -30,7 +44,7 @@
 
             <div class="box-logo">
                 <a>Estatística</a>
-                <a>Contatos</a>
+                <a href="../src/pages/contatos.html">Contatos</a>
             </div>
         </div>
 
@@ -39,50 +53,40 @@
         </p>
         <div class="container-form-model">
 
-
             <div class="form">
                 <label for="title">Titulo</label>
-
                 <input name="title" id="title" type="text">
 
                 <label id="Mensagem-label" for="Mensagem">Mensagem</label>
-
                 <textarea id="mensage-input" name="Mensagem" id="Mensagem" rows="10"></textarea>
 
 
                 <label id="Assinatura-label" for="Assinatura">Assinatura</label>
-
                 <input id="single-line-input" name="Assinatura" type="text">
 
                 <label for="email">Email</label>
-
                 <input name="email" id="email" type="text">
 
 
             </div>
+
+
             <div class="model">
                 <img src="../assets/cartao1.png" alt="">
 
                 <div class="container-buttons">
 
-                    <a class="more-cards" href="">+ Modelos de cartões</a>
+                    <a class="more-cards" href="#modal">+ Modelos de cartões</a>
                     <button class="Save">Salvar</button>
 
                 </div>
-
-            
-            <div class="form">
-                <input type="text">
-                <input id="mensage-input" name="" id=""  rows="10"></input>
-                <input size="25" id="single-line-input" type="text">
             </div>
-            <div class="model">
-                <img src="../assets/cartao1.png" alt="">
 
-            </div>
         </div>
 
+
     </div>
+
 </body>
 
 </html>
