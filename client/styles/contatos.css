@@ -1,6 +1,6 @@
-
-
-
+a i {
+    color: var(--bg-color) !important;
+}
 .container-contacts{
     display: flex;
     justify-content: center;
