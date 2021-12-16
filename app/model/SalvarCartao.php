@@ -26,9 +26,12 @@
         
             }
     }
-
+    
+    
     $sal = new SalvarCartao();
-    echo ($sal->salvar('Tipo4', 'Feliz natal', 'Para todos um feliz natal', 'Francisco Santana Cardoso', 'teste@teste.com', 'casa@casa.com'));
+    echo ($sal->salvar($_POST['tipo'], $_POST['title'], $_POST['mensagem'], $_POST['assinatura'], $_POST['email'], $_POST['email']));
+    
+    $data->response = array("sucess" => true);
     
 ?>
 

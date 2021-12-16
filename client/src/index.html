@@ -14,79 +14,86 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="modal" class="modal">
         <div class="container-cards">
-
             <div class="header-modal">
                 <a href="#"><img src="../assets/close.svg"></a>
-
                 <h1 class="modal-title">Modelos</h1>
-            </div>
-        
-                
-            
-                
+            </div>     
         </div>
     </div>
 
     <div class="container">
-
-
-
         <div class="nav-bar">
-
-
             <h1 class="logo">Cardyx.</h1>
-
             <div class="box-logo">
                 <a>Estatística</a>
                 <a href="../src/pages/contatos.html">Contatos</a>
             </div>
         </div>
-
         <p class="about-we">
             ...
         </p>
         <div class="container-form-model">
-
             <div class="form">
                 <label for="title">Titulo</label>
                 <input name="title" id="title" type="text">
 
                 <label id="Mensagem-label" for="Mensagem">Mensagem</label>
-                <textarea id="mensage-input" name="Mensagem" id="Mensagem" rows="10"></textarea>
-
+                <textarea id="mensagem-input" name="Mensagem" id="Mensagem" rows="10"></textarea>
 
                 <label id="Assinatura-label" for="Assinatura">Assinatura</label>
                 <input id="single-line-input" name="Assinatura" type="text">
 
                 <label for="email">Email</label>
                 <input name="email" id="email" type="text">
-
-
             </div>
-
 
             <div class="model">
                 <img src="../assets/cartao1.png" alt="">
-
                 <div class="container-buttons">
-
                     <a class="more-cards" href="#modal">+ Modelos de cartões</a>
-                    <button class="Save">Salvar</button>
-
+                    <button id="save" class="Save">Salvar</button>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
+    <script>
+        $(document).ready(function() {
+            document.getElementById('save').addEventListener("click", function(e) {
+                salvarCartao();
+            })
+        });
+
+        function salvarCartao() {
+            var jsonData = {
+                'tipo': 'Tipo1',
+                'title': $('#title').val(),
+                'mensagem': $('#mensagem-input').val(),
+                'assinatura': $('#single-line-input').val(),
+                'email': $('#email').val(),
+            }
+
+            console.log(jsonData);
+
+            $.ajax({
+                method: 'POST',
+                url: '../../app/model/SalvarCartao.php',
+                data: jsonData,
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
