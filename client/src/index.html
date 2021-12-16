@@ -47,7 +47,7 @@
                 <textarea id="mensagem-input" name="Mensagem" id="Mensagem" rows="10"></textarea>
 
                 <label id="Assinatura-label" for="Assinatura">Assinatura</label>
-                <input id="single-line-input" name="Assinatura" type="text">
+                <input id="single-line-input" name="Assinatura" type="text" onKeyPress="return(fMasc(this,mAssinatura))">
 
                 <label for="email">Email</label>
                 <input name="email" id="email" type="text">
@@ -63,6 +63,22 @@
         </div>
     </div>
 
+    <script>
+        function fMasc(objeto, mascara) {
+            obj = objeto;
+            masc = mascara;
+            setTimeout("fMascEx()", 1);
+        }
+
+        function fMascEx() {
+            obj.value = masc(obj.value);
+        }
+
+        function mAssinatura(assinatura) {
+            assinatura = assinatura.replace(/\d/g, "");
+            return assinatura;
+        }
+    </script>
     <script>
         $(document).ready(function() {
             document.getElementById('save').addEventListener("click", function(e) {
