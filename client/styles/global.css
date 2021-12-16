@@ -1,21 +1,22 @@
 :root {
     --text-color: #F5F5F5;
     --bg-color:#FF4A4A;
+    --bg-modal: #f5f5f5;
   }
-
+html{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--bg-color);
 
 }
 body{
-    background: rgb(255,74,74);
-background: -moz-linear-gradient(90deg, rgba(255,74,74,1) 28%, rgba(255,107,150,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(255,74,74,1) 28%, rgba(255,107,150,1) 100%);
-background: linear-gradient(90deg, rgba(255,74,74,1) 28%, rgba(255,107,150,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4a4a",endColorstr="#ff6b96",GradientType=1);
+   background: rgb(255,74,74);
+
 }
 h1{
     color: var(--text-color);
@@ -25,4 +26,10 @@ label{
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     font-size: 18px;
+}
+input{
+    background: none;
+}
+textarea{
+    background: none;
 }
