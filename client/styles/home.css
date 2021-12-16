@@ -73,12 +73,10 @@ a{
     font-size: 22px;
     font-weight:600;
     text-decoration: none;
-
 }
 a:hover{
     text-decoration: underline;
     cursor: pointer;
-
 }
 .container-form-model{
     display: flex;
@@ -88,8 +86,6 @@ a:hover{
 .form{
     display: flex;
     flex-direction: column;
-   
-
 }
 .form input{
     gap: 25px;
