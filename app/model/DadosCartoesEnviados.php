@@ -28,10 +28,10 @@
             
             $arrayRetorno = array (
                 "total" => $contTotal,
-                "contTipo1" => $contTipo1,
-                "contTipo2" => $contTipo2,
-                "contTipo3" => $contTipo3,
-                "contTipo4" => $contTipo4
+                "totalTipo1" => $contTipo1,
+                "totalTipo2" => $contTipo2,
+                "totalTipo3" => $contTipo3,
+                "totalTipo4" => $contTipo4
             );
 
             return($arrayRetorno);
