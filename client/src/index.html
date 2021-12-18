@@ -88,6 +88,21 @@
     </script>
 
     <script>
+        function setTitle(title) {
+            console.log(title)
+            $('#title-card').val($('#title').val())
+        }
+
+        function setMessage() {
+            $('#message-card').val($('#mensagem-input').val())
+        }
+
+        function setSignature() {
+            $('#signature-card').val($('#single-line-input').val())
+        }
+    </script>
+    
+    <script>
         $(document).ready(function() {
             document.getElementById('save').addEventListener("click", function(e) {
                 salvarCartao();
