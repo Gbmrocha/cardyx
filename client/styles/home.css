@@ -8,6 +8,17 @@
     visibility: hidden;
     
 }
+.card{
+    display: flex;
+
+}
+.card-content{
+
+    background-color: var(--text-color);
+}
+.card-content h1{
+
+}
 .header-modal{
     display: flex;
     align-items: center;
