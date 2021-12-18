@@ -10,14 +10,27 @@
 }
 .card{
     display: flex;
+    width: 600px;
+
 
 }
 .card-content{
-
+    padding: 2em;
+    text-align: center;
+    border-radius: 0.25rem;
     background-color: var(--text-color);
 }
-.card-content h1{
-
+.card-content h1,p{
+    color: var(--text-color-card);
+    font-family: 'Poppins', sans-serif;
+}
+.card-content p{
+    font-size: 13px;
+}
+.card-content span{
+    color: var(--text-color-card);
+    font-size: 19px;
+    font-family: 'Marck Script';
 }
 .header-modal{
     display: flex;
