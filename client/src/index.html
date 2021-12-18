@@ -127,37 +127,48 @@
         });
 
         function salvarCartao() {
-            var jsonData = {
-                'tipo': 'Tipo1',
-                'title': $('#title').val(),
-                'mensagem': $('#mensagem-input').val(),
-                'assinatura': $('#single-line-input').val(),
-                'email': $('#email').val(),
+            if(!$('#title').val() || !$('#mensagem-input').val() || !$('#single-line-input').val() || !$('#email').val()) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Preencha todos os campos antes de salvar',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
             }
-
-            $.ajax({
-                method: 'POST',
-                url: '../../app/model/SalvarCartao.php',
-                data: jsonData,
-                success: function(response) {
-                    console.log(response);
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Seu cartão foi enviado com sucesso',
-                        showConfirmButton: false,
-                        timer: 4000
-                    })
-                },
-                error: function(e) {
-                    console.log(e);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Servidor indisponível, tente novamente mais tarde',
-                        showConfirmButton: false,
-                        timer: 5000
-                    })
+            else {
+                var jsonData = {
+                    'tipo': 'Tipo1',
+                    'title': $('#title').val(),
+                    'mensagem': $('#mensagem-input').val(),
+                    'assinatura': $('#single-line-input').val(),
+                    'email': $('#email').val(),
                 }
-            });
+    
+                $.ajax({
+                    method: 'POST',
+                    url: '../../app/model/SalvarCartao.php',
+                    data: jsonData,
+                    success: function(response) {
+                        console.log(response);
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Seu cartão foi enviado com sucesso',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                        window.reload();
+                    },
+                    error: function(e) {
+                        console.log(e);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Servidor indisponível, tente novamente mais tarde',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    }
+                });
+            }
         }
     </script>
 </body>
