@@ -8,6 +8,13 @@
     visibility: hidden;
     
 }
+
+#x-modal{
+    position: relative;
+    left: 500px;
+    bottom: 3px;
+}
+
 .card{
     display: flex;
     width: 600px;
