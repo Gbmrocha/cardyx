@@ -93,7 +93,7 @@ a:hover{
     color: var(--text-color);
     outline: 0;
     border: 2px solid var(--text-color);
-    width: 372px;
+    width: 379px;
     height: 51px;
     padding:1rem;
     border-radius: 0.25rem;
@@ -171,4 +171,48 @@ a:hover{
 #single-line-input:focus {
     padding:16px 16px 10px 16px;
     height: 42px;
+}
+
+@media (max-width: 1174px){
+    .container{
+        justify-content: center;
+        
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container-form-model{
+        gap: 60px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .more-cards{
+        margin-right: 0px;
+    }
+    .container-buttons{
+        gap: 20px;
+        margin-bottom: 60px;
+    }
+    .nav-bar{
+
+        margin: 0px;
+        padding: 0px;
+        flex-direction: column;
+    }
+    .form input, textarea{
+        width: 300px;
+
+    }
+    .form{
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    .model{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card{
+    width: 90%;
+    }
 }
