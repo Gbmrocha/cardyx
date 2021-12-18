@@ -66,8 +66,8 @@
                     <img width="200px" height="350px"
                     src="../assets/card-1.png" alt="">
                     <div class="card-content">
-                        <h1 id="title-card" class="title-card"> Titulo</h1>
-                        <p id="message-card" class="message-card"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <h1 id="title-card" class="title-card">Titulo</h1>
+                        <p id="message-card" class="message-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
                         <span id="signature-card"class="signature-card">Assinatura</span>
                     </div>
                 </div>
@@ -97,17 +97,17 @@
     </script>
 
     <script>
-        function setTitle(title) {
-            console.log(title)
-            $('#title-card').val($('#title').val())
+        function setTitle() {
+            $('#title-card').text($('#title').val())
         }
 
         function setMessage() {
-            $('#message-card').val($('#mensagem-input').val())
+
+            $('#message-card').text($('#mensagem-input').val())
         }
 
         function setSignature() {
-            $('#signature-card').val($('#single-line-input').val())
+            $('#signature-card').text($('#single-line-input').val())
         }
     </script>
     
@@ -115,7 +115,16 @@
         $(document).ready(function() {
             document.getElementById('save').addEventListener("click", function(e) {
                 salvarCartao();
-            })
+            });
+            document.getElementById('title').addEventListener("keyup", function(e) {
+                setTitle();
+            });
+            document.getElementById('mensagem-input').addEventListener("keyup", function(e) {
+                setMessage();
+            });
+            document.getElementById('single-line-input').addEventListener("keyup", function(e) {
+                setSignature();
+            });
         });
 
         function salvarCartao() {
