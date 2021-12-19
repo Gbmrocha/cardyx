@@ -22,17 +22,17 @@
     <div id="modal" class="modal">
         <div class="container-cards">
             <div class="header-modal">
-                <a href="#"><img id="x-modal"src="../assets/close.svg"></a>
+                <a id="fecha" href="#"><img id="x-modal"src="../assets/close.svg"></a>
                 <h1 class="modal-title">Modelos</h1>
             </div>    
             <div class="cards">
-                <img id="" width="200px" height="350px"
+                <img id="Tipo1" width="200px" height="350px"
                     src="../assets/card-1.png" alt="">
-                    <img width="200px" height="350px"
+                <img id="Tipo2" width="200px" height="350px"
                     src="../assets/card-2.png" alt="">
-                    <img width="200px" height="350px"
+                <img id="Tipo3" width="200px" height="350px"
                     src="../assets/card-3.png" alt="">
-                    <img width="200px" height="350px"
+                <img id="Tipo4" width="200px" height="350px"
                     src="../assets/card-4.png" alt="">
             </div> 
         </div>
@@ -72,8 +72,7 @@
 
             <div class="model">
                 <div class="card">
-                    
-                    <img width="200px" height="350px"
+                    <img id="img" width="200px" height="350px"
                     src="../assets/card-1.png" alt="">
                     <div class="card-content">
                         <h1 id="title-card" class="title-card"> Titulo</h1>
@@ -118,24 +117,14 @@
         function setSignature() {
             $('#signature-card').text($('#single-line-input').val())
         }
+
+        function setImage(tipo) {
+            document.getElementById('img').src = document.getElementById(tipo).src
+            document.getElementById('fecha').click()
+        }
     </script>
     
     <script>
-        $(document).ready(function() {
-            document.getElementById('save').addEventListener("click", function(e) {
-                salvarCartao();
-            });
-            document.getElementById('title').addEventListener("keyup", function(e) {
-                setTitle();
-            });
-            document.getElementById('mensagem-input').addEventListener("keyup", function(e) {
-                setMessage();
-            });
-            document.getElementById('single-line-input').addEventListener("keyup", function(e) {
-                setSignature();
-            });
-        });
-
         function salvarCartao() {
             if(!$('#title').val() || !$('#mensagem-input').val() || !$('#single-line-input').val() || !$('#email').val()) {
                 Swal.fire({
@@ -146,14 +135,17 @@
                 })
             }
             else {
+                let img = document.getElementById('img').src.split("/")
                 var jsonData = {
-                    'tipo': 'Tipo1',
+                    'tipo': 'Tipo' + img[img.length - 1].replace(/\D/g, ""),
                     'title': $('#title').val(),
                     'mensagem': $('#mensagem-input').val(),
                     'assinatura': $('#single-line-input').val(),
                     'email': $('#email').val(),
                 }
-    
+                
+                console.log(jsonData)
+
                 $.ajax({
                     method: 'POST',
                     url: '../../app/model/SalvarCartao.php',
@@ -180,6 +172,35 @@
                 });
             }
         }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            document.getElementById('save').addEventListener("click", function(e) {
+                salvarCartao();
+            });
+            document.getElementById('title').addEventListener("keyup", function(e) {
+                setTitle();
+            });
+            document.getElementById('mensagem-input').addEventListener("keyup", function(e) {
+                setMessage();
+            });
+            document.getElementById('single-line-input').addEventListener("keyup", function(e) {
+                setSignature();
+            });
+            document.getElementById('Tipo1').addEventListener("click", function(e) {
+                setImage('Tipo1');
+            });
+            document.getElementById('Tipo2').addEventListener("click", function(e) {
+                setImage('Tipo2');
+            });
+            document.getElementById('Tipo3').addEventListener("click", function(e) {
+                setImage('Tipo3');
+            });
+            document.getElementById('Tipo4').addEventListener("click", function(e) {
+                setImage('Tipo4');
+            });
+        });
     </script>
 
     <script src="../_scripts/neve.js"></script>
