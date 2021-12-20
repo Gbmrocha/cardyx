@@ -113,9 +113,13 @@
 }
 
 .about{
+    
     padding: 20px 90px 90px 90px;
 }
 .about-we{
+    padding-left: 20em;
+    padding-right: 20em;
+   
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     text-align: center;
