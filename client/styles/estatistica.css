@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+}
+.container-graphic{
+    width: 45%;
+    padding: 2em;
+
+}
+
+canvas{
+    border-radius: 0.25rem;
+    padding: 0.3em;
+    background-color: #fff;
+
+}
+@media(max-width:673px){
+    .container-graphic{
+        width: 90%;
+    }
+    
+}
+@media(max-width:1183px){
+    .container-graphic{
+        width: 60%;
+    }
+    
+}
+
+
