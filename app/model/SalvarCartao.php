@@ -32,6 +32,7 @@
     echo ($sal->salvar($_POST['tipo'], $_POST['title'], $_POST['mensagem'], $_POST['assinatura'], $_POST['email'], $_POST['email']));
     
     $data->response = array("sucess" => true);
+    echo json_encode($data);
     
 ?>
 

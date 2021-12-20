@@ -1,5 +1,7 @@
+function configData(params) {
 
 const ctx = document.getElementById('myChart');
+
   const data = {
     labels: [
       'Modelo 1',
@@ -10,7 +12,7 @@ const ctx = document.getElementById('myChart');
     datasets: [{
       label: 'My First Dataset',
       //Bota os valores aqui no 'data'
-      data: [300, 50, 100,50],
+      data: [params['totalTipo1'], params['totalTipo2'], params['totalTipo3'], params['totalTipo4']],
       backgroundColor: [
         'rgb(255, 99, 132)',
         'rgb(54, 162, 235)',
@@ -20,7 +22,7 @@ const ctx = document.getElementById('myChart');
       hoverOffset: 4
     }]
   };
-
+  
   const config = {
     type: 'pie',
     data: data,
@@ -31,11 +33,13 @@ const ctx = document.getElementById('myChart');
             font:{
               size:14,
               family:"'Arial', sans-serif",
-            
+              
             }
           }
         }
       }
     }
   };
-      const myChart = new Chart(ctx, config);
+  const myChart = new Chart(ctx, config);
+  
+}

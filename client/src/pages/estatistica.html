@@ -34,5 +34,20 @@
     </div>
     <script src="../../_scripts/grafico.js"></script>
     <script src="../../_scripts/neve.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                method: 'GET',
+                url: '../../app/model/DadosCartoesEnviados.php',
+                success: function(response) {
+                console.log(response);
+                configData(response.data)
+                },
+                error: function(e) {
+                console.log(e);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

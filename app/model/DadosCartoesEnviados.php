@@ -42,5 +42,8 @@
     $teste = new DadosCartoesEnviados();
     $casa = $teste -> resgatarDados();
 
+    $data->response = array("sucess" => true, "data" => $casa);
+    echo json_encode($data);
+
     var_dump($casa["total"])
 ?>
