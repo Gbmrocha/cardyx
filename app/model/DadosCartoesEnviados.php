@@ -34,16 +34,13 @@
                 "totalTipo4" => $contTipo4
             );
 
-            return($arrayRetorno);
-            
+            $jsonData = json_encode($arrayRetorno);
+            echo $jsonData;
+            return("Dados salvos");
         }
         
     }
     $teste = new DadosCartoesEnviados();
     $casa = $teste -> resgatarDados();
 
-    $data->response = array("sucess" => true, "data" => $casa);
-    echo json_encode($data);
-
-    var_dump($casa["total"])
 ?>

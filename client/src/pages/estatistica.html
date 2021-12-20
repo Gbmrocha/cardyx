@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../styles/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 
@@ -32,16 +32,67 @@
         </div>
     </div>
     </div>
-    <script src="../../_scripts/grafico.js"></script>
+    <script>
+        function configData(params) {
+
+            console.log(params);
+
+        const ctx = document.getElementById('myChart');
+
+        const data = {
+            labels: [
+            'Modelo 1',
+            'Modelo 2',
+            'Modelo 3',
+            'Modelo 4'
+            ],
+            datasets: [{
+            label: 'My First Dataset',
+            //Bota os valores aqui no 'data'
+            data: [params['totalTipo1'], params['totalTipo2'], params['totalTipo3'], params['totalTipo4']],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)',
+                '#ee82ee'
+            ],
+            hoverOffset: 4
+            }]
+        };
+        
+        const config = {
+            type: 'pie',
+            data: data,
+            options:{
+            plugins:{
+                legend:{
+                labels:{
+                    font:{
+                    size:14,
+                    family:"'Arial', sans-serif",
+                    
+                    }
+                }
+                }
+            }
+            }
+        };
+        const myChart = new Chart(ctx, config);
+        
+        }
+    </script>
     <script src="../../_scripts/neve.js"></script>
     <script>
         $(document).ready(function() {
             $.ajax({
                 method: 'GET',
-                url: '../../app/model/DadosCartoesEnviados.php',
+                url: '../../../app/model/DadosCartoesEnviados.php',
                 success: function(response) {
-                console.log(response);
-                configData(response.data)
+                    
+                    response = JSON.parse(response);
+                    console.log(response);
+
+                    configData(response)
                 },
                 error: function(e) {
                 console.log(e);
