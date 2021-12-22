@@ -64,7 +64,7 @@
                 <label for="title">Titulo</label>
                 <input name="title" id="title" type="text">
 
-                <label id="Mensagem-label" for="Mensagem">Mensagem   <span id="cont">120</span></label>
+                <label id="Mensagem-label" for="Mensagem">Mensagem   <span id="cont">(120)</span></label>
               
                 <textarea onkeyup="limite_textarea(this.value)" 
 
@@ -102,22 +102,16 @@
             total = valor.length;
             if(total <= quant) {
                 resto = quant - total;
-                document.getElementById('cont').innerHTML = resto;
+                document.getElementById('cont').innerHTML = '(-'+ resto+')';
+                
+                if(resto ==  120){
+                document.getElementById('cont').innerHTML = '('+ resto+')';
+
+                }
             } else {
                 document.getElementById('mensagem-input').value = valor.substr(0,quant);
             }
-            if(resto >= 50){
-                document.getElementById('cont').style.color = 'green';
-                
-            }
-            if (resto < 50){
-                document.getElementById('cont').style.color = 'yellow';
 
-            }
-            if (resto <=20){
-                document.getElementById('cont').style.color = 'red';
-
-            }
         }
         function fMasc(objeto, mascara) {
             obj = objeto;

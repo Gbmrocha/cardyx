@@ -37,10 +37,9 @@
     
 }
 #cont{
-    background-color: rgb(17, 14, 24);
+
     padding: 0.2em;
-    border-radius: 0.25rem;
-    color: green;
+  
 }
 .card-content h1,p{
 
