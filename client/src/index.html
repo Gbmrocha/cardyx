@@ -64,8 +64,11 @@
                 <label for="title">Titulo</label>
                 <input name="title" id="title" type="text">
 
-                <label id="Mensagem-label" for="Mensagem">Mensagem</label>
-                <textarea id="mensagem-input" name="Mensagem" id="Mensagem" rows="10"></textarea>
+                <label id="Mensagem-label" for="Mensagem">Mensagem   <span id="cont">120</span></label>
+              
+                <textarea onkeyup="limite_textarea(this.value)" 
+
+                id="mensagem-input" name="Mensagem" id="Mensagem"  maxlength="120" rows="10"></textarea>
 
                 <label id="Assinatura-label" for="Assinatura">Assinatura</label>
                 <input id="single-line-input" name="Assinatura" type="text" onKeyPress="return(fMasc(this,mAssinatura))">
@@ -80,7 +83,7 @@
                     src="../assets/card-1.png" alt="">
                     <div class="card-content">
                         <h1 id="title-card" class="title-card"> Titulo</h1>
-                        <p id="message-card" class="message-card"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p id="message-card" class="message-card"> Digite sua mensagem aqui! :) com limite de 120 caracteres, resume bem o que quer mandar.</p>
                         <span id="signature-card"class="signature-card">Assinatura</span>
                     </div>
                 </div>
@@ -93,6 +96,29 @@
     </div>
 
     <script>
+          function limite_textarea(valor) {
+
+            quant = 120;
+            total = valor.length;
+            if(total <= quant) {
+                resto = quant - total;
+                document.getElementById('cont').innerHTML = resto;
+            } else {
+                document.getElementById('mensagem-input').value = valor.substr(0,quant);
+            }
+            if(resto >= 50){
+                document.getElementById('cont').style.color = 'green';
+                
+            }
+            if (resto < 50){
+                document.getElementById('cont').style.color = 'yellow';
+
+            }
+            if (resto <=20){
+                document.getElementById('cont').style.color = 'red';
+
+            }
+        }
         function fMasc(objeto, mascara) {
             obj = objeto;
             masc = mascara;
